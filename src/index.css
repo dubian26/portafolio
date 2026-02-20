@@ -1,14 +1,30 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import "tailwindcss";
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-primary: #0db9f2;
+  --color-background-dark: #101e22;
+  --color-background-light: #f5f8f8;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+}
+
+@layer base {
+  body {
+    @apply bg-background-dark text-slate-100 antialiased;
+    font-family: var(--font-sans);
+  }
+}
+
+.glass-header {
+  background: rgba(16, 30, 34, 0.8);
+  backdrop-filter: blur(12px);
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #0db9f2, #60e3ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
