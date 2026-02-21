@@ -15,16 +15,292 @@
    body {
       @apply bg-background-dark text-slate-100 antialiased;
       font-family: var(--font-sans);
+      transition: background-color 0.4s ease, color 0.4s ease;
    }
 }
+
+/* =============================================
+   GLASS HEADER
+   ============================================= */
 
 .glass-header {
    background: rgba(16, 30, 34, 0.8);
    backdrop-filter: blur(12px);
+   transition: background 0.4s ease, border-color 0.4s ease;
 }
 
+/* =============================================
+   TEXT GRADIENT
+   ============================================= */
+
 .text-gradient {
-   background: linear-gradient(to right, #0db9f2, #60e3ff 60%, #feffb9);
+   background: linear-gradient(to right, #0db9f2, #60e3ff 70%, #fcff37);
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
+}
+
+/* =============================================
+   THEME TOGGLE BUTTON
+   ============================================= */
+
+.theme-toggle-btn {
+   background: rgba(13, 185, 242, 0.1);
+   border: 1px solid rgba(13, 185, 242, 0.25);
+}
+
+.theme-toggle-btn:hover {
+   background: rgba(13, 185, 242, 0.2);
+   border-color: rgba(13, 185, 242, 0.4);
+}
+
+/* =============================================
+   NAV LINKS
+   ============================================= */
+
+.nav-link {
+   color: #94a3b8;
+}
+
+/* =============================================
+   LIGHT THEME OVERRIDES
+   ============================================= */
+
+:root.light body {
+   background-color: #faf9f7;
+   color: #444;
+}
+
+/* -- Header ---------------------------------- */
+
+:root.light .glass-header {
+   background: rgba(250, 249, 247, 0.85);
+   border-bottom-color: rgba(13, 185, 242, 0.12);
+}
+
+:root.light .glass-header h2 {
+   color: #333;
+}
+
+/* -- Nav links ------------------------------- */
+
+:root.light .nav-link {
+   color: #555;
+}
+
+:root.light .nav-link:hover {
+   color: #0db9f2;
+}
+
+/* -- Theme toggle button --------------------- */
+
+:root.light .theme-toggle-btn {
+   background: rgba(13, 185, 242, 0.08);
+   border-color: rgba(13, 185, 242, 0.2);
+}
+
+:root.light .theme-toggle-btn:hover {
+   background: rgba(13, 185, 242, 0.15);
+   border-color: rgba(13, 185, 242, 0.35);
+}
+
+/* -- Text gradient --------------------------- */
+
+:root.light .text-gradient {
+   background: linear-gradient(to right, #0db9f2, #60e3ff 70%, #fcff37);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+
+/* -- Hero section ---------------------------- */
+
+:root.light #about h1 {
+   color: #333;
+}
+
+:root.light #about p {
+   color: #555;
+}
+
+:root.light #about span.text-slate-100 {
+   color: #333 !important;
+}
+
+:root.light #about a[href="#projects"] {
+   background-color: #0db9f2;
+   color: #fff;
+}
+
+:root.light #about a[href="#contact"] {
+   background-color: #eee;
+   color: #444;
+}
+
+:root.light #about a[href="#contact"]:hover {
+   background-color: #e0dfdd;
+}
+
+/* -- Skills section --------------------------- */
+
+:root.light #skills {
+   background-color: #f3f2ef;
+}
+
+:root.light #skills h3 {
+   color: #333;
+}
+
+:root.light #skills p {
+   color: #555;
+}
+
+:root.light #skills h4 {
+   color: #333;
+}
+
+:root.light #skills>div>div:last-child>div {
+   background: rgba(13, 185, 242, 0.04);
+   border-color: rgba(13, 185, 242, 0.15);
+}
+
+/* Skill cards */
+
+:root.light #skills .bg-slate-800\/50 {
+   background-color: #fff;
+   border-color: #e5e4e0;
+   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+:root.light #skills .bg-slate-800\/50:hover {
+   border-color: rgba(13, 185, 242, 0.4);
+}
+
+:root.light #skills .text-slate-500 {
+   color: #888;
+}
+
+/* -- Experience section ----------------------- */
+
+:root.light #experience h3 {
+   color: #333;
+}
+
+:root.light #experience .bg-slate-800 {
+   background-color: #fff;
+   border-color: #e5e4e0;
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+:root.light #experience .border-slate-700 {
+   border-color: #e5e4e0;
+}
+
+:root.light #experience h4 {
+   color: #333;
+}
+
+:root.light #experience .text-slate-400 {
+   color: #555;
+}
+
+:root.light #experience .bg-slate-800:not(.ring-8) {
+   border-color: #e5e4e0;
+}
+
+/* Timeline vertical line */
+
+:root.light #experience .bg-slate-800.transform {
+   background-color: #ddd;
+}
+
+:root.light #experience .ring-primary\/20 {
+   --tw-ring-color: rgba(13, 185, 242, 0.15);
+}
+
+/* -- Projects section ------------------------- */
+
+:root.light #projects {
+   background-color: #f3f2ef;
+}
+
+:root.light #projects h3 {
+   color: #333;
+}
+
+:root.light #projects .bg-slate-800 {
+   background-color: #fff;
+   border-color: #e5e4e0;
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+:root.light #projects .border-slate-700 {
+   border-color: #e5e4e0;
+}
+
+:root.light #projects h4 {
+   color: #333;
+}
+
+:root.light #projects .text-slate-400 {
+   color: #555;
+}
+
+:root.light #projects .bg-slate-700 {
+   background-color: #f0efed;
+}
+
+/* -- Contact CTA section ---------------------- */
+
+:root.light #contact .bg-primary {
+   background-color: #0db9f2;
+}
+
+:root.light #contact .text-background-dark {
+   color: #fff;
+}
+
+:root.light #contact .text-background-dark\/80 {
+   color: rgba(255, 255, 255, 0.85);
+}
+
+:root.light #contact .bg-background-dark {
+   background-color: #1a2e33;
+}
+
+/* -- Footer ----------------------------------- */
+
+:root.light footer {
+   border-top-color: #e5e4e0;
+}
+
+:root.light footer p {
+   color: #888;
+}
+
+:root.light footer a {
+   color: #666;
+}
+
+:root.light footer a:hover {
+   color: #0db9f2;
+}
+
+:root.light footer h2,
+:root.light footer h3,
+:root.light footer h4 {
+   color: #333;
+}
+
+/* =============================================
+   SMOOTH TRANSITIONS FOR ALL THEME ELEMENTS
+   ============================================= */
+
+#skills,
+#projects,
+footer,
+.bg-slate-800,
+.bg-slate-800\/50,
+.bg-slate-700,
+.border-slate-700,
+.border-slate-800 {
+   transition: background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
 }

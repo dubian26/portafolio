@@ -27,7 +27,8 @@ export const Hero = () => {
                transition={{ delay: 0.1 }}
                className="text-5xl md:text-7xl font-black leading-[1.1] mb-8 max-w-4xl tracking-tight"
             >
-               Dubian Sepulveda - <span className="text-gradient">Ingeniero de Sistemas & Full Stack Developer</span>
+               <div>Dubian Sepulveda</div>
+               <span className="text-gradient">Ingeniero de Sistemas & Full Stack Developer</span>
             </motion.h1>
 
             <motion.p
