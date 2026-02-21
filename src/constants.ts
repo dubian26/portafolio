@@ -1,83 +1,103 @@
-import { Terminal, Code2, Monitor, Database, DraftingCompass, Share2, Github, Mail, Linkedin, ArrowDown, ExternalLink, Code } from 'lucide-react';
+import { Code, Code2, Database, Monitor } from "lucide-react"
+import dashboardImage from "./assets/dashboard.webp"
+import ecomerceImage from "./assets/ecommerce.webp"
+import tiendaonlineImage from "./assets/tiendaonline.webp"
 
 export interface Skill {
-  title: string;
-  subtitle: string;
-  icon: any;
+   title: string
+   subtitle: string
+   icon: any
 }
 
 export interface Experience {
-  period: string;
-  role: string;
-  company: string;
-  description?: string;
-  bullets?: string[];
+   period: string
+   role: string
+   company: string
+   description?: string
+   bullets?: string[]
 }
 
 export interface Project {
-  title: string;
-  description: string;
-  image: string;
-  tags: string[];
-  links: {
-    demo?: string;
-    code?: string;
-    caseStudy?: string;
-    docs?: string;
-  };
+   title: string
+   description: string
+   image: string
+   tags: string[]
+   links: {
+      demo?: string
+      code?: string
+      caseStudy?: string
+      docs?: string
+   }
 }
 
 export const SKILLS: Skill[] = [
-  { title: 'ASP.NET', subtitle: 'BACKEND SPECIALIST', icon: Code2 },
-  { title: 'React', subtitle: 'FRONTEND EXPERT', icon: Monitor },
-  { title: 'TypeScript', subtitle: 'STRONGLY TYPED CODE', icon: Code },
-  { title: 'SQL Server', subtitle: 'POSTGRES & RELATIONAL', icon: Database },
-];
+   { title: "ASP.NET", subtitle: "BACKEND SPECIALIST", icon: Code2 },
+   { title: "SQL Server", subtitle: "RELATIONAL DATABASES", icon: Database },
+   { title: "React + TypeScript", subtitle: "FRONTEND EXPERT", icon: Monitor },
+   { title: "NodeJs + TypeScript", subtitle: "BACKEND EXPERT", icon: Code },
+]
 
 export const EXPERIENCE: Experience[] = [
-  {
-    period: '2021 — Presente',
-    role: 'Senior Full Stack Developer',
-    company: 'Empresa Tech Global',
-    bullets: [
-      'Liderazgo técnico en arquitecturas de microservicios con .NET 8.',
-      'Desarrollo de dashboards complejos en React y Redux Toolkit.',
-    ],
-  },
-  {
-    period: '2018 — 2021',
-    role: 'Systems Engineer',
-    company: 'Software Factory Regional',
-    description: 'Diseño e implementación de bases de datos relacionales y optimización de consultas en SQL Server para sistemas de alta disponibilidad.',
-  },
-  {
-    period: '2016 — 2018',
-    role: 'Junior Developer',
-    company: 'Sistemas Integrados S.A.',
-    description: 'Mantenimiento y desarrollo de nuevas funcionalidades en aplicaciones legacy ASP.NET MVC y Web API.',
-  },
-];
+   {
+      period: "2019 — 2026",
+      role: "Líder técnico",
+      company: "Sistemas y Computadores S.A.",
+      description: "Lideré un equipo de desarrollo, implementando arquitecturas limpias y " +
+         "patrones de diseño robustos en ASP.NET Core. Optimizé bases de datos SQL Server para entornos " +
+         "de alta concurrencia y gestioné procesos de CI/CD con Azure DevOps. En el frontend, " +
+         "trabajé con React y Typescript, implementando interfaces de usuario modernas y responsivas.",
+   },
+   {
+      period: "2014 — 2018",
+      role: "Ingeniero desarrollador junior",
+      company: "Sistemas y Computadores S.A.",
+      description: "Desarrollé aplicaciones en C# .NET Framework, participé en la creación de " +
+         "herramientas transversales como: componente de cargue de archivos, componente de generación " +
+         "dinámica de formulario, cargue de registros masivos por medio de recepción de documento Excel " +
+         "y autómatas para procesamiento en lote y transferencia de datos.",
+   },
+   {
+      period: "2010 — 2013",
+      role: "Ingeniero desarrollador auxiliar",
+      company: "Sistemas y Computadores S.A.",
+      description: "Participé en la creación de aplicaciones en VB .NET Framework, " +
+         "construyendo modelos de base de datos y interfaces de usuario con " +
+         "HTML, CSS, JavaScript, JQuery y Bootstrap.",
+   },
+   {
+      period: "2008 - 2009",
+      role: "Ingeniero desarrollador web",
+      company: "Systemico Software",
+      description: "Trabajé como desarrollador web en una aplicación de gestión " +
+         "documental llamada GEMAGRID, donde utilizamos plantillas CGI y " +
+         "código PERL como lenguaje lado servidor, JAVASCRIPT para " +
+         "validaciones y peticiones AJAX.",
+   },
+]
 
 export const PROJECTS: Project[] = [
-  {
-    title: 'SaaS Analytics Platform',
-    description: 'Plataforma escalable de análisis de datos en tiempo real construida bajo Clean Architecture.',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDLC-6K5p9apRDiEOvOAzF3dB7GfkASTFxKzpgkBaejjsVXkTLnq-HzcuUYOBMsa95s1ndN_hYCDDXtztOsThk5uTLMd08gU-2Rab481jRh0yAkKBYaRmOpbkxBi-p9nAfSmobk6ztGA2p8FLkxBBfXgcbUIksB_8DN6T45OeACieeqPBXEJqbljvsksBT5BDuuM4riU-dOgwLzZER6XYWhT99rx0jt-Ha1M6uPEefnqnoG9wRfV_umBCbuNEfjT3fetE-7LdzqFWs',
-    tags: ['REACT', 'ASP.NET', 'DDD'],
-    links: { caseStudy: '#' },
-  },
-  {
-    title: 'E-commerce API Engine',
-    description: 'Motor robusto para tiendas online con soporte para múltiples pasarelas de pago y gestión de stock.',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBvJZ-6MAFGN3KAYYp75ddYASaZH4O8D43sElVjBQIQSUkWDa2LmT4NG_6jMMdAk-o5XOZX31nfXWKRzqTav1yrcSo6j-4blAtUFVmIFqmGMNqZh-gqhrHQUKAb7h9waroZE5PgX_YllkENUIMjdgrPuPVfDWGaRxNXoLLqfFWODHGO3qE597kZ3bqrGbWULuRIFSMxl88FcK_96wvQqQwJFlLJEqdttvJNdcvjPi6GyGPvsOGGt96JJXGY4W8-3nYdWjKuqTKzg1A',
-    tags: ['TYPESCRIPT', 'POSTGRES', 'NODEJS'],
-    links: { code: '#' },
-  },
-  {
-    title: 'Distributed Caching System',
-    description: 'Sistema de caché distribuido diseñado para optimizar el rendimiento de microservicios de alta carga.',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuATIuiwsX5ZxgkFH6hjQ1wn9Cbyg0R2oepzOyIyGozHBDjAKw1dtgkdyKanw9gMkZ5yfLhw7l-rjen2rkS6QPTVn1XkCcklHuJ7fgXl__MkTNspnNfEK3H4hk4LV2z967oqj048UPjElcE8IVxZnaA71b2PkmGyGSZDGGvW9UflLgYmYsRI7_StzO1VulKYb1DyA5YzMdfZmTo_ZD1k-GgzzSPdiqtGt8YHcc_deI0gmd4XhzithHTNrLiylbLB-Yf1kd_WhFIaCZU',
-    tags: ['.NET CORE', 'REDIS', 'DOCKER'],
-    links: { docs: '#' },
-  },
-];
+   {
+      title: "Proyecto de Afiliaciones ARL",
+      description: "Mi experiencia como Líder Técnico en Sistemas y Computadores S.A. para el proyecto de ARL, " +
+         "me permitió diseñar APIs con arquitecturas limpias, garantizando la integridad de datos en procesos de alta criticidad. " +
+         "Gracias a la implementación de patrones robustos y optimización en los procesos, logramos sistemas altamente afinados para soportar " +
+         "la concurrencia masiva exigida por el sector de riesgos laborales.",
+      image: dashboardImage,
+      tags: ["ASP.NET", "SQL SERVER", "REACT", "TYPESCRIPT", "DDD"],
+      links: { caseStudy: "#" },
+   },
+   {
+      title: "Demo Tienda Online con React + IndexedDB",
+      description: "Desarrollo un proyecto personal con el objetivo de aprender y demostrar el uso de IndexedDB para almacenamiento local de datos en el navegador.",
+      image: ecomerceImage,
+      tags: ["REACT", "TYPESCRIPT", "INDEXEDDB"],
+      links: { demo: "#" },
+   },
+   {
+      title: "Demo Tienda Online con React + NodeJs + Postgres",
+      description: "Desarrollo un proyecto personal con el objetivo de aprender y demostrar el uso de NodeJs + Postgres para crear una tienda online.",
+      image: tiendaonlineImage,
+      tags: ["REACT", "NODEJS", "POSTGRES"],
+      links: { demo: "#" },
+   },
+]
