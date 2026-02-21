@@ -72,7 +72,8 @@ export const Skills = () => {
                         Domino patrones avanzados como CQRS para optimizar el rendimiento y Saga/Outbox
                         para resolver la consistencia en sistemas distribuidos. Utilizo Repository Pattern junto a Unit of Work
                         para un acceso a datos estructurado, y priorizo siempre la legibilidad (Clean Code) mediante
-                        Early Return y patrones creacionales, permitiendo que la lógica de negocio sea el centro de la aplicación.
+                        patrones creacionales, medidor, Early Return entre otros, permitiendo que la lógica de negocio
+                        sea el centro de la aplicación.
                      </p>
                   </div>
                </motion.div>

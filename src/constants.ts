@@ -27,6 +27,7 @@ export interface Project {
       code?: string
       caseStudy?: string
       docs?: string
+      noLink?: string
    }
 }
 
@@ -49,12 +50,12 @@ export const EXPERIENCE: Experience[] = [
    },
    {
       period: "2014 — 2018",
-      role: "Ingeniero desarrollador junior",
+      role: "Ingeniero desarrollador senior",
       company: "Sistemas y Computadores S.A.",
       description: "Desarrollé aplicaciones en C# .NET Framework, participé en la creación de " +
          "herramientas transversales como: componente de cargue de archivos, componente de generación " +
-         "dinámica de formulario, cargue de registros masivos por medio de recepción de documento Excel " +
-         "y autómatas para procesamiento en lote y transferencia de datos.",
+         "dinámica de formulario, oper-manager, cargue de registros masivos por medio de recepción de documento Excel " +
+         "y construí autómatas para procesamiento en lote y transferencia de datos.",
    },
    {
       period: "2010 — 2013",
@@ -84,20 +85,32 @@ export const PROJECTS: Project[] = [
          "la concurrencia masiva exigida por el sector de riesgos laborales.",
       image: dashboardImage,
       tags: ["ASP.NET", "SQL SERVER", "REACT", "TYPESCRIPT", "DDD"],
-      links: { caseStudy: "#" },
+      links: { noLink: "#" },
    },
    {
       title: "Demo Tienda Online con React + IndexedDB",
-      description: "Desarrollo un proyecto personal con el objetivo de aprender y demostrar el uso de IndexedDB para almacenamiento local de datos en el navegador.",
+      description: "Esta aplicación es una demostración de un sistema de inventario " +
+         "para tiendas virtuales. Su objetivo es mostrar algunas de mis habilidades " +
+         "técnicas y experiencia como ingeniero de sistemas en el desarrollo " +
+         "de aplicaciones web modernas.",
       image: ecomerceImage,
       tags: ["REACT", "TYPESCRIPT", "INDEXEDDB"],
-      links: { demo: "#" },
+      links: {
+         demo: "https://demo-tienda-online-react.vercel.app",
+         code: "https://github.com/dubian26/demo-tienda-online-react"
+      },
    },
    {
       title: "Demo Tienda Online con React + NodeJs + Postgres",
-      description: "Desarrollo un proyecto personal con el objetivo de aprender y demostrar el uso de NodeJs + Postgres para crear una tienda online.",
+      description: "Esta aplicación es una demostración de un sistema de inventario " +
+         "para tiendas virtuales. Su objetivo es mostrar algunas de mis habilidades " +
+         "técnicas y experiencia como ingeniero de sistemas en el desarrollo " +
+         "de aplicaciones web modernas.",
       image: tiendaonlineImage,
       tags: ["REACT", "NODEJS", "POSTGRES"],
-      links: { demo: "#" },
+      links: {
+         demo: "https://demo-tienda-online-full-stack.vercel.app",
+         code: "https://github.com/dubian26/demo-tienda-online-full-stack"
+      },
    },
 ]
