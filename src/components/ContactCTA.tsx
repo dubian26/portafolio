@@ -1,5 +1,5 @@
 import { motion } from "motion/react"
-import personaje0 from "../assets/personaje/0.png"
+import personaje from "../assets/personaje.webp"
 
 export const ContactCTA = () => {
    return (
@@ -12,7 +12,7 @@ export const ContactCTA = () => {
          >
             <div className="flex justify-center items-center shrink-0 grow">
                <img
-                  src={personaje0} alt="personaje"
+                  src={personaje} alt="personaje"
                   className="size-72 object-cover border-6 border-white rounded-3xl"
                />
             </div>

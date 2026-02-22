@@ -69,7 +69,7 @@ export const Skills = () => {
                      <h4 className="text-xl font-bold mb-1">Design Patterns</h4>
                      <p className="text-slate-400 text-sm">
                         Mi enfoque en el desarrollo de APIs va más allá del CRUD básico.
-                        Domino patrones avanzados como CQRS para optimizar el rendimiento y Saga/Outbox
+                        Domino patrones avanzados como CQRS para optimizar el rendimiento y otros
                         para resolver la consistencia en sistemas distribuidos. Utilizo Repository Pattern junto a Unit of Work
                         para un acceso a datos estructurado, y priorizo siempre la legibilidad (Clean Code) mediante
                         patrones creacionales, medidor, Early Return entre otros, permitiendo que la lógica de negocio

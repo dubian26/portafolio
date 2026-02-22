@@ -35,7 +35,7 @@ export const SKILLS: Skill[] = [
    { title: "ASP.NET", subtitle: "BACKEND SPECIALIST", icon: Code2 },
    { title: "SQL Server", subtitle: "RELATIONAL DATABASES", icon: Database },
    { title: "React + TypeScript", subtitle: "FRONTEND EXPERT", icon: Monitor },
-   { title: "NodeJs + TypeScript", subtitle: "BACKEND EXPERT", icon: Code },
+   { title: "NodeJs", subtitle: "BACKEND EXPERT", icon: Code },
 ]
 
 export const EXPERIENCE: Experience[] = [
@@ -84,7 +84,7 @@ export const PROJECTS: Project[] = [
          "Gracias a la implementación de patrones robustos y optimización en los procesos, logramos sistemas altamente afinados para soportar " +
          "la concurrencia masiva exigida por el sector de riesgos laborales.",
       image: dashboardImage,
-      tags: ["ASP.NET", "SQL SERVER", "REACT", "TYPESCRIPT", "DDD"],
+      tags: ["ASP.NET", "SQL SERVER", "Clean Architecture"],
       links: { noLink: "#" },
    },
    {
@@ -103,7 +103,9 @@ export const PROJECTS: Project[] = [
    },
    {
       title: "Demo Tienda Online con React + NodeJs + Postgres",
-      description: "En construcción...",
+      description: "Demo de un sistema de inventario para tiendas virtuales. " +
+         "Esta vez quiero usar tecnologías del ecosistema Javascript como NodeJs, " +
+         "Prisma, Postgres, entre otros.",
       image: tiendaonlineImage,
       tags: ["REACT", "NODEJS", "POSTGRES"],
       links: {
