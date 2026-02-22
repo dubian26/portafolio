@@ -47,11 +47,11 @@ export const Header = () => {
                      animate={{ rotate: 0, opacity: 1 }}
                      transition={{ duration: 0.3, ease: "easeOut" }}
                   >
-                     {theme === "dark" ? (
-                        <Sun className="size-5 text-primary" />
-                     ) : (
-                        <Moon className="size-5 text-primary" />
-                     )}
+                     {
+                        theme === "dark" ?
+                           <Sun className="size-5 text-primary" /> :
+                           <Moon className="size-5 text-primary" />
+                     }
                   </motion.div>
                </motion.button>
 

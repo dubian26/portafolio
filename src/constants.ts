@@ -92,7 +92,8 @@ export const PROJECTS: Project[] = [
       description: "Esta aplicación es una demostración de un sistema de inventario " +
          "para tiendas virtuales. Su objetivo es mostrar algunas de mis habilidades " +
          "técnicas y experiencia como ingeniero de sistemas en el desarrollo " +
-         "de aplicaciones web modernas.",
+         "de aplicaciones web modernas. La capa de persistencia de datos se realiza " +
+         "utilizando IndexedDB (sin backend, base de datos local en el navegador).",
       image: ecomerceImage,
       tags: ["REACT", "TYPESCRIPT", "INDEXEDDB"],
       links: {
