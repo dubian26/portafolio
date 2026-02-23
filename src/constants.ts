@@ -53,8 +53,8 @@ export const EXPERIENCE: Experience[] = [
       role: "Ingeniero desarrollador senior",
       company: "Sistemas y Computadores S.A.",
       description: "Desarrollé aplicaciones en C# .NET Framework, participé en la creación de " +
-         "herramientas transversales como: componente de cargue de archivos, componente de generación " +
-         "dinámica de formulario, oper-manager, cargue de registros masivos por medio de recepción de documento Excel " +
+         "herramientas transversales para la compañía, como: componente de cargue de archivos, componente de generación " +
+         "dinámica de formularios, oper-manager, radicación masiva por medio cargue y extracción de datos desde archivos Excel " +
          "y construí autómatas para procesamiento en lote y transferencia de datos.",
    },
    {
@@ -62,8 +62,8 @@ export const EXPERIENCE: Experience[] = [
       role: "Ingeniero desarrollador auxiliar",
       company: "Sistemas y Computadores S.A.",
       description: "Participé en la creación de aplicaciones en VB .NET Framework, " +
-         "construyendo modelos de base de datos y interfaces de usuario con " +
-         "HTML, CSS, JavaScript, JQuery y Bootstrap.",
+         "construyendo modelos de base de datos, analizando consultas, generando reportes " +
+         "y desarrollando interfaces de usuario con HTML, CSS, JavaScript, JQuery y Bootstrap.",
    },
    {
       period: "2008 - 2009",
@@ -91,9 +91,9 @@ export const PROJECTS: Project[] = [
       title: "Demo Tienda Online con React + IndexedDB",
       description: "Esta aplicación es una demostración de un sistema de inventario " +
          "para tiendas virtuales. Su objetivo es mostrar algunas de mis habilidades " +
-         "técnicas y experiencia como ingeniero de sistemas en el desarrollo " +
-         "de aplicaciones web modernas. La capa de persistencia de datos se realiza " +
-         "utilizando IndexedDB (sin backend, base de datos local en el navegador).",
+         "técnicas  en el desarrollo de aplicaciones web modernas. " +
+         "En la capa de persistencia de datos se utiliza IndexedDB " +
+         "para simular el backend, base de datos local en el navegador.",
       image: ecomerceImage,
       tags: ["REACT", "TYPESCRIPT", "INDEXEDDB"],
       links: {
@@ -103,15 +103,12 @@ export const PROJECTS: Project[] = [
    },
    {
       title: "Demo Tienda Online con React + NodeJs + Postgres",
-      description: "Esta aplicación es una demostración de un sistema de inventario " +
-         "para tiendas virtuales. Su objetivo es mostrar algunas de mis habilidades " +
-         "técnicas y experiencia como ingeniero de sistemas en el desarrollo " +
-         "de aplicaciones web modernas.",
+      description: "En construcción...",
       image: tiendaonlineImage,
       tags: ["REACT", "NODEJS", "POSTGRES"],
       links: {
-         demo: "https://demo-tienda-online-full-stack.vercel.app",
-         code: "https://github.com/dubian26/demo-tienda-online-full-stack"
+         demo: "https://demo-tienda-online-full.vercel.app",
+         code: "https://github.com/dubian26/demo-tienda-online-full"
       },
    },
 ]
