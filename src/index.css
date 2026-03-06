@@ -4,34 +4,69 @@
    --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 
    --color-primary: #0db9f2;
+   --color-primary-light: rgba(13, 185, 242, 0.1);
+   --color-primary-border: rgba(13, 185, 242, 0.25);
+
    --color-background-dark: #101e22;
-   --color-background-light: #f5f8f8;
+   --color-background-light: #faf9f7;
 
    --radius-xl: 0.75rem;
    --radius-2xl: 1rem;
 }
 
+:root {
+   --bg-primary: #101e22;
+   --bg-secondary: #0f172a;
+   --bg-tertiary: #1e293b;
+   --bg-card: #1e293b;
+   --bg-card-hover: #334155;
+   --bg-tag: #334155;
+
+   --text-primary: #f1f5f9;
+   --text-secondary: #94a3b8;
+   --text-muted: #64748b;
+
+   --border-default: #334155;
+   --border-subtle: #1e293b;
+
+   --glass-bg: rgba(16, 30, 34, 0.8);
+   --glass-border: rgba(13, 185, 242, 0.1);
+}
+
+:root.light {
+   --bg-primary: #faf9f7;
+   --bg-secondary: #f3f2ef;
+   --bg-tertiary: #f0efed;
+   --bg-card: #ffffff;
+   --bg-card-hover: #f5f4f2;
+   --bg-tag: #f0efed;
+
+   --text-primary: #333333;
+   --text-secondary: #555555;
+   --text-muted: #888888;
+
+   --border-default: #e5e4e0;
+   --border-subtle: #e5e4e0;
+
+   --glass-bg: rgba(250, 249, 247, 0.85);
+   --glass-border: rgba(13, 185, 242, 0.12);
+}
+
 @layer base {
    body {
-      @apply bg-background-dark text-slate-100 antialiased;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
       font-family: var(--font-sans);
       transition: background-color 0.4s ease, color 0.4s ease;
    }
 }
 
-/* =============================================
-   GLASS HEADER
-   ============================================= */
-
 .glass-header {
-   background: rgba(16, 30, 34, 0.8);
+   background: var(--glass-bg);
    backdrop-filter: blur(12px);
+   border-bottom: 1px solid var(--glass-border);
    transition: background 0.4s ease, border-color 0.4s ease;
 }
-
-/* =============================================
-   TEXT GRADIENT
-   ============================================= */
 
 .text-gradient {
    background: linear-gradient(to right, #0db9f2, #60e3ff 70%, #fcff37);
@@ -39,59 +74,15 @@
    -webkit-text-fill-color: transparent;
 }
 
-/* =============================================
-   THEME TOGGLE BUTTON
-   ============================================= */
-
 .theme-toggle-btn {
-   background: rgba(13, 185, 242, 0.1);
-   border: 1px solid rgba(13, 185, 242, 0.25);
+   background: var(--color-primary-light);
+   border: 1px solid var(--color-primary-border);
 }
 
 .theme-toggle-btn:hover {
    background: rgba(13, 185, 242, 0.2);
    border-color: rgba(13, 185, 242, 0.4);
 }
-
-/* =============================================
-   NAV LINKS
-   ============================================= */
-
-.nav-link {
-   color: #94a3b8;
-}
-
-/* =============================================
-   LIGHT THEME OVERRIDES
-   ============================================= */
-
-:root.light body {
-   background-color: #faf9f7;
-   color: #444;
-}
-
-/* -- Header ---------------------------------- */
-
-:root.light .glass-header {
-   background: rgba(250, 249, 247, 0.85);
-   border-bottom-color: rgba(13, 185, 242, 0.12);
-}
-
-:root.light .glass-header h2 {
-   color: #333;
-}
-
-/* -- Nav links ------------------------------- */
-
-:root.light .nav-link {
-   color: #555;
-}
-
-:root.light .nav-link:hover {
-   color: #0db9f2;
-}
-
-/* -- Theme toggle button --------------------- */
 
 :root.light .theme-toggle-btn {
    background: rgba(13, 185, 242, 0.08);
@@ -103,26 +94,81 @@
    border-color: rgba(13, 185, 242, 0.35);
 }
 
-/* -- Text gradient --------------------------- */
-
-:root.light .text-gradient {
-   background: linear-gradient(to right, #0db9f2, #60e3ff 70%, #fcff37);
-   -webkit-background-clip: text;
-   -webkit-text-fill-color: transparent;
+.nav-link {
+   color: var(--text-secondary);
 }
 
-/* -- Hero section ---------------------------- */
-
-:root.light #about h1 {
-   color: #333;
+.nav-link:hover {
+   color: var(--color-primary);
 }
 
-:root.light #about p {
-   color: #555;
+#skills,
+#projects,
+footer {
+   background-color: var(--bg-secondary);
+   transition: background-color 0.4s ease;
 }
 
-:root.light #about span.text-slate-100 {
-   color: #333 !important;
+#skills h3,
+#projects h3,
+#experience h3,
+footer h2,
+footer h3,
+footer h4 {
+   color: var(--text-primary);
+}
+
+#skills p,
+#projects p,
+#experience p,
+#experience .text-slate-400,
+footer p {
+   color: var(--text-secondary);
+}
+
+#skills h4,
+#projects h4,
+#experience h4 {
+   color: var(--text-primary);
+}
+
+.bg-slate-800,
+.bg-slate-800\/50 {
+   background-color: var(--bg-card);
+   border-color: var(--border-default);
+   transition: background-color 0.4s ease, border-color 0.4s ease;
+}
+
+.bg-slate-800:hover {
+   background-color: var(--bg-card-hover);
+   border-color: rgba(13, 185, 242, 0.4);
+}
+
+.bg-slate-700 {
+   background-color: var(--bg-tag);
+   transition: background-color 0.4s ease;
+}
+
+.border-slate-700,
+.border-slate-800 {
+   border-color: var(--border-default);
+   transition: border-color 0.4s ease;
+}
+
+.text-slate-500 {
+   color: var(--text-muted);
+}
+
+#experience .bg-slate-800.transform {
+   background-color: var(--border-default);
+}
+
+#experience .ring-primary\/20 {
+   --tw-ring-color: rgba(13, 185, 242, 0.15);
+}
+
+#about .text-slate-100 {
+   color: var(--text-primary);
 }
 
 :root.light #about a[href="#projects"] {
@@ -139,141 +185,12 @@
    background-color: #e0dfdd;
 }
 
-/* -- Skills section --------------------------- */
-
-:root.light #skills {
-   background-color: #f3f2ef;
-}
-
-:root.light #skills h3 {
-   color: #333;
-}
-
-:root.light #skills p {
-   color: #555;
-}
-
-:root.light #skills h4 {
-   color: #333;
-}
-
-:root.light #skills>div>div:last-child>div {
-   background: rgba(13, 185, 242, 0.04);
-   border-color: rgba(13, 185, 242, 0.15);
-}
-
-/* Skill cards */
-
-:root.light #skills .bg-slate-800\/50 {
-   background-color: #fff;
-   border-color: #e5e4e0;
-   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-}
-
-:root.light #skills .bg-slate-800\/50:hover {
-   border-color: rgba(13, 185, 242, 0.4);
-}
-
-:root.light #skills .text-slate-500 {
-   color: #888;
-}
-
-/* -- Experience section ----------------------- */
-
-:root.light #experience h3 {
-   color: #333;
-}
-
-:root.light #experience .bg-slate-800 {
-   background-color: #fff;
-   border-color: #e5e4e0;
-   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-}
-
-:root.light #experience .border-slate-700 {
-   border-color: #e5e4e0;
-}
-
-:root.light #experience h4 {
-   color: #333;
-}
-
-:root.light #experience .text-slate-400 {
-   color: #555;
-}
-
-:root.light #experience .bg-slate-800:not(.ring-8) {
-   border-color: #e5e4e0;
-}
-
-/* Timeline vertical line */
-
-:root.light #experience .bg-slate-800.transform {
-   background-color: #ddd;
-}
-
-:root.light #experience .ring-primary\/20 {
-   --tw-ring-color: rgba(13, 185, 242, 0.15);
-}
-
-/* -- Projects section ------------------------- */
-
-:root.light #projects {
-   background-color: #f3f2ef;
-}
-
-:root.light #projects h3 {
-   color: #333;
-}
-
-:root.light #projects .bg-slate-800 {
-   background-color: #fff;
-   border-color: #e5e4e0;
-   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-}
-
-:root.light #projects .border-slate-700 {
-   border-color: #e5e4e0;
-}
-
-:root.light #projects h4 {
-   color: #333;
-}
-
-:root.light #projects .text-slate-400 {
-   color: #555;
-}
-
-:root.light #projects .bg-slate-700 {
-   background-color: #f0efed;
-}
-
-/* -- Contact CTA section ---------------------- */
-
-:root.light #contact .bg-primary {
-   background-color: #0db9f2;
-}
-
-:root.light #contact .text-background-dark {
-   color: #fff;
-}
-
-:root.light #contact .text-background-dark\/80 {
-   color: rgba(255, 255, 255, 0.85);
-}
-
 :root.light #contact .bg-background-dark {
    background-color: #1a2e33;
 }
 
-/* -- Footer ----------------------------------- */
-
 :root.light footer {
-   border-top-color: #e5e4e0;
-}
-
-:root.light footer p {
-   color: #888;
+   border-top-color: var(--border-default);
 }
 
 :root.light footer a {
@@ -284,23 +201,14 @@
    color: #0db9f2;
 }
 
-:root.light footer h2,
-:root.light footer h3,
-:root.light footer h4 {
-   color: #333;
+#contact .bg-primary {
+   background-color: var(--color-primary);
 }
 
-/* =============================================
-   SMOOTH TRANSITIONS FOR ALL THEME ELEMENTS
-   ============================================= */
+#contact .text-background-dark {
+   color: #fff;
+}
 
-#skills,
-#projects,
-footer,
-.bg-slate-800,
-.bg-slate-800\/50,
-.bg-slate-700,
-.border-slate-700,
-.border-slate-800 {
-   transition: background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
+#contact .text-background-dark\/80 {
+   color: rgba(255, 255, 255, 0.85);
 }

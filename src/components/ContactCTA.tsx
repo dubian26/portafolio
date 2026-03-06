@@ -29,9 +29,10 @@ export const ContactCTA = () => {
                      whileHover={{ scale: 1.05 }}
                      whileTap={{ scale: 0.95 }}
                      href="mailto:dubian26@gmail.com"
-                     className="px-8 py-4 bg-background-dark text-primary font-black rounded-xl shadow-xl"
+                     className="px-6 py-4 bg-background-dark text-primary font-black rounded-xl shadow-xl flex flex-col items-center min-w-[200px]"
                   >
-                     Envíame un Email
+                     <span className="text-sm opacity-80">Envíame un Email</span>
+                     <span className="text-lg">dubian26@gmail.com</span>
                   </motion.a>
                   <motion.a
                      whileHover={{ scale: 1.05 }}
