@@ -240,7 +240,8 @@ export const TRANSLATIONS = {
          tag: "¿Tienes un proyecto en mente?",
          title: "Trabajemos juntos para construir algo increíble.",
          button: "Contactar ahora",
-         sendEmail: "Envíame un Email"
+         sendEmail: "Envíame un Email",
+         downloadCV: "Descargar CV"
       }
    },
    en: {
@@ -285,7 +286,8 @@ export const TRANSLATIONS = {
          tag: "Have a project in mind?",
          title: "Let's work together to build something amazing.",
          button: "Contact now",
-         sendEmail: "Send me an Email"
+         sendEmail: "Send me an Email",
+         downloadCV: "Download CV"
       }
    }
 }
