@@ -1,6 +1,11 @@
 import { Github, Linkedin, Terminal } from "lucide-react"
+import { useLanguage } from "../context/LanguageContext"
+import { TRANSLATIONS } from "../constants"
 
 export const Footer = () => {
+   const { language } = useLanguage()
+   const t = TRANSLATIONS[language].footer
+
    return (
       <footer className="py-12 border-t border-slate-800">
          <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
@@ -9,7 +14,7 @@ export const Footer = () => {
                   <Terminal className="text-primary size-4" />
                </div>
                <p className="text-sm text-slate-500 font-medium">
-                  © {new Date().getFullYear()} Dubian Sepulveda. Built with Passion.
+                  © {new Date().getFullYear()} Dubian Sepulveda. {t.rights}
                </p>
             </div>
 

@@ -1,9 +1,13 @@
-import { Moon, Sun, Terminal } from "lucide-react"
+import { Languages, Moon, Sun, Terminal } from "lucide-react"
 import { motion } from "motion/react"
-import { useTheme } from "../hooks/useTheme"
+import { useTheme } from "../context/ThemeContext"
+import { useLanguage } from "../context/LanguageContext"
+import { TRANSLATIONS } from "../constants"
 
 export const Header = () => {
    const { theme, toggleTheme } = useTheme()
+   const { language, toggleLanguage } = useLanguage()
+   const t = TRANSLATIONS[language]
 
    return (
       <header className="fixed top-0 left-0 right-0 z-50 glass-header border-b border-primary/10">
@@ -21,18 +25,31 @@ export const Header = () => {
 
             <nav className="hidden md:flex items-center gap-6">
                {
-                  ["About", "Skills", "Experience", "Projects", "Contact"].map((item) => (
+                  t.nav.map((item) => (
                      <a
-                        key={item} href={`#${item.toLowerCase()}`}
+                        key={item.id} href={`#${item.id}`}
                         className="text-md font-medium nav-link hover:text-primary hover:underline transition-colors"
                      >
-                        {item}
+                        {item.name}
                      </a>
                   ))
                }
             </nav>
 
             <div className="flex items-center gap-3">
+               <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  onClick={toggleLanguage}
+                  className="theme-toggle-btn size-10 rounded-lg flex items-center justify-center transition-all"
+                  aria-label={language === "es" ? "Switch to English" : "Cambiar a Español"}
+               >
+                  <div className="flex flex-col items-center">
+                     <Languages className="size-5 text-primary" />
+                     <span className="text-[8px] font-bold text-primary uppercase">{language}</span>
+                  </div>
+               </motion.button>
+
                <motion.button
                   id="theme-toggle"
                   whileHover={{ scale: 1.1 }}
@@ -61,7 +78,7 @@ export const Header = () => {
                   href="#contact"
                   className="bg-primary hover:bg-primary/90 text-background-dark px-6 py-2.5 rounded-lg text-sm font-bold transition-all shadow-lg shadow-primary/20"
                >
-                  Contactar
+                  {t.hero.contact}
                </motion.a>
             </div>
          </div>

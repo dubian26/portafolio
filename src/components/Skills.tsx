@@ -1,23 +1,28 @@
 import { DraftingCompass, Network } from "lucide-react"
 import { motion } from "motion/react"
-import { SKILLS } from "../constants"
+import { SKILLS, TRANSLATIONS } from "../constants"
+import { useLanguage } from "../context/LanguageContext"
 
 export const Skills = () => {
+   const { language } = useLanguage()
+   const t = TRANSLATIONS[language].skills
+   const skillsList = SKILLS[language]
+
    return (
       <section id="skills" className="py-24 bg-slate-900/30">
          <div className="max-w-7xl mx-auto px-6">
             <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-6">
                <div className="max-w-2xl">
-                  <h2 className="text-primary font-bold text-sm tracking-widest uppercase mb-3">Core Stack</h2>
-                  <h3 className="text-4xl font-black">Skills & Expertise</h3>
+                  <h2 className="text-primary font-bold text-sm tracking-widest uppercase mb-3">{t.tag}</h2>
+                  <h3 className="text-4xl font-black">{t.title}</h3>
                   <p className="text-slate-400 mt-4 leading-relaxed">
-                     Dominio profundo de tecnologías modernas para construir aplicaciones de grado empresarial con un enfoque en mantenibilidad y rendimiento.
+                     {t.description}
                   </p>
                </div>
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-               {SKILLS.map((skill, index) => (
+               {skillsList.map((skill, index) => (
                   <motion.div
                      key={skill.title}
                      initial={{ opacity: 0, y: 20 }}
@@ -44,14 +49,9 @@ export const Skills = () => {
                      <DraftingCompass className="text-primary size-8" />
                   </div>
                   <div>
-                     <h4 className="text-xl font-bold mb-1">Clean Architecture (DDD)</h4>
+                     <h4 className="text-xl font-bold mb-1">{t.cleanArch.title}</h4>
                      <p className="text-slate-400 text-sm">
-                        Domain-Driven-Design me permitió escalar y mantener las reglas de negocio
-                        de forma robusta. Gracias a la inyección de dependencias y la responsabilidad única
-                        de los repositorios, logré implementar pruebas unitarias eficaces mediante mocks,
-                        validando no solo funciones aisladas sino casos de uso completos.
-                        Esto garantizó despliegues a producción seguros y una estabilidad constante
-                        en cada nueva funcionalidad.
+                        {t.cleanArch.description}
                      </p>
                   </div>
                </motion.div>
@@ -66,14 +66,9 @@ export const Skills = () => {
                      <Network className="text-primary size-8" />
                   </div>
                   <div>
-                     <h4 className="text-xl font-bold mb-1">Design Patterns</h4>
+                     <h4 className="text-xl font-bold mb-1">{t.patterns.title}</h4>
                      <p className="text-slate-400 text-sm">
-                        Mi enfoque en el desarrollo de APIs va más allá del CRUD básico.
-                        Domino patrones avanzados como CQRS para optimizar el rendimiento y otros
-                        para resolver la consistencia en sistemas distribuidos. Utilizo Repository Pattern junto a Unit of Work
-                        para un acceso a datos estructurado, y priorizo siempre la legibilidad (Clean Code) mediante
-                        patrones creacionales, medidor, Early Return entre otros, permitiendo que la lógica de negocio
-                        sea el centro de la aplicación.
+                        {t.patterns.description}
                      </p>
                   </div>
                </motion.div>

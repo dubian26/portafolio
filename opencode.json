@@ -1,0 +1,60 @@
+{
+   "$schema": "https://opencode.ai/config.json",
+   "plugin": [
+      "opencode-gemini-auth@latest"
+   ],
+   "mcp": {
+      "context7": {
+         "type": "local",
+         "enabled": false,
+         "command": [
+            "npx",
+            "-y",
+            "@upstash/context7-mcp",
+            "--api-key",
+            "ctx7sk-a8cb51fc-3539-405c-9cd0-5b6e32c0bf3e"
+         ]
+      }
+   },
+   "watcher": {
+      "ignore": [
+         "node_modules/**",
+         "dist/**",
+         ".git/**",
+         "bin/**",
+         "obj/**",
+         "*.log",
+         "*.svg",
+         "package-lock.json",
+         "**/.*"
+      ]
+   },
+   "small_model": "google/gemini-2.5-flash",
+   "model": "google/gemini-3-flash-preview",
+   "default_agent": "flash",
+   "agent": {
+      "flash": {
+         "model": "google/gemini-2.5-flash",
+         "description": "Consultas rápidas y debugging",
+         "temperature": 0.7,
+         "options": {
+            "steps": 10,
+            "maxTokens": 4096,
+            "contextWindow": 15,
+            "compressLargeFiles": true
+         }
+      },
+      "build": {
+         "model": "google/gemini-3-flash-preview",
+         "description": "Implementación de nuevas funcionalidades, corrección de errores y optimización de código",
+         "temperature": 0.2,
+         "prompt": "Actúa como Senior Systems Engineer. Usa patrones de Clean Architecture y optimiza consultas para PostgreSQL.",
+         "options": {
+            "steps": 20,
+            "maxTokens": 8192,
+            "contextWindow": 30,
+            "compressLargeFiles": true
+         }
+      }
+   }
+}

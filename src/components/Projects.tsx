@@ -1,27 +1,32 @@
 import { ArrowRight, Code, ExternalLink } from "lucide-react"
 import { motion } from "motion/react"
-import { PROJECTS } from "../constants"
+import { PROJECTS, TRANSLATIONS } from "../constants"
+import { useLanguage } from "../context/LanguageContext"
 
 export const Projects = () => {
+   const { language } = useLanguage()
+   const t = TRANSLATIONS[language].projects
+   const projectsList = PROJECTS[language]
+
    return (
       <section id="projects" className="py-24 bg-slate-900/50">
          <div className="max-w-7xl mx-auto px-6">
             <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-6">
                <div>
-                  <h2 className="text-primary font-bold text-sm tracking-widest uppercase mb-3">Portfolio</h2>
-                  <h3 className="text-4xl font-black">Featured Projects</h3>
+                  <h2 className="text-primary font-bold text-sm tracking-widest uppercase mb-3">{t.tag}</h2>
+                  <h3 className="text-4xl font-black">{t.title}</h3>
                </div>
                <a
                   href="https://github.com/dubian26" target="_blank"
                   className="text-primary font-bold hover:underline underline-offset-4 flex items-center gap-2 group">
-                  Ver demos en GitHub
+                  {t.viewGitHub}
                   <ArrowRight className="size-5 transition-transform group-hover:translate-x-1" />
                </a>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                {
-                  PROJECTS.map((project, index) => (
+                  projectsList.map((project, index) => (
                      <motion.div
                         key={project.title}
                         initial={{ opacity: 0, y: 20 }}
@@ -64,7 +69,7 @@ export const Projects = () => {
                                     href={project.links.caseStudy || project.links.demo || project.links.docs || "#"} target="_blank"
                                     className="text-primary font-bold text-sm flex items-center gap-1 group/link"
                                  >
-                                    {project.links.caseStudy ? "Case Study" : project.links.demo ? "Demo" : project.links.docs ? "Documentación" : "No link"}
+                                    {project.links.caseStudy ? "Case Study" : project.links.demo ? "Demo" : project.links.docs ? t.documentation : "No link"}
                                     <ExternalLink className="size-4 transition-transform group-hover/link:translate-x-1 group-hover/link:-translate-y-1" />
                                  </a>
                               }

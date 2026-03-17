@@ -1,16 +1,21 @@
 import { motion } from "motion/react"
-import { EXPERIENCE } from "../constants"
+import { EXPERIENCE, TRANSLATIONS } from "../constants"
+import { useLanguage } from "../context/LanguageContext"
 
 export const Experience = () => {
+   const { language } = useLanguage()
+   const t = TRANSLATIONS[language].experience
+   const experienceList = EXPERIENCE[language]
+
    return (
       <section id="experience" className="py-24 px-6 max-w-7xl mx-auto">
-         <h2 className="text-primary font-bold text-sm tracking-widest uppercase mb-3">Trayectoria</h2>
-         <h3 className="text-4xl font-black mb-16">Experience Timeline</h3>
+         <h2 className="text-primary font-bold text-sm tracking-widest uppercase mb-3">{t.tag}</h2>
+         <h3 className="text-4xl font-black mb-16">{t.title}</h3>
 
          <div className="relative space-y-12">
             <div className="absolute left-0 sm:left-1/2 top-0 bottom-0 w-0.5 bg-slate-800 transform -translate-x-1/2 hidden sm:block"></div>
 
-            {EXPERIENCE.map((item, index) => (
+            {experienceList.map((item, index) => (
                <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}

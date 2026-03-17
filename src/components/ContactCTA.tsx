@@ -1,7 +1,12 @@
 import { motion } from "motion/react"
 import personaje from "../assets/personaje.webp"
+import { useLanguage } from "../context/LanguageContext"
+import { TRANSLATIONS } from "../constants"
 
 export const ContactCTA = () => {
+   const { language } = useLanguage()
+   const t = TRANSLATIONS[language].contact
+
    return (
       <section id="contact" className="py-24 px-6 relative overflow-hidden">
          <motion.div
@@ -18,10 +23,10 @@ export const ContactCTA = () => {
             </div>
             <div className="p-6 text-center">
                <h3 className="text-background-dark text-3xl md:text-4xl font-black mb-6 leading-tight">
-                  ¿Buscas resultados? Mi experiencia está a tu disposición.
+                  {t.tag}
                </h3>
                <p className="text-background-dark/80 text-lg md:text-xl font-medium mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed">
-                  Hablemos sobre cómo puedo aportar valor a tu equipo.
+                  {t.title}
                </p>
 
                <div className="flex flex-wrap justify-center gap-4">
@@ -31,7 +36,7 @@ export const ContactCTA = () => {
                      href="mailto:dubian26@gmail.com"
                      className="px-6 py-4 bg-background-dark text-primary font-black rounded-xl shadow-xl flex flex-col items-center min-w-[200px]"
                   >
-                     <span className="text-sm opacity-80">Envíame un Email</span>
+                     <span className="text-sm opacity-80">{t.sendEmail}</span>
                      <span className="text-lg">dubian26@gmail.com</span>
                   </motion.a>
                   <motion.a

@@ -1,7 +1,12 @@
 import { ArrowDown } from "lucide-react"
 import { motion } from "motion/react"
+import { useLanguage } from "../context/LanguageContext"
+import { TRANSLATIONS } from "../constants"
 
 export const Hero = () => {
+   const { language } = useLanguage()
+   const t = TRANSLATIONS[language].hero
+
    return (
       <section id="about" className="relative overflow-hidden py-24 md:py-32 lg:py-48 px-6">
          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full opacity-10 pointer-events-none">
@@ -18,7 +23,7 @@ export const Hero = () => {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
                </span>
-               Disponible
+               {t.available}
             </motion.div>
 
             <motion.h1
@@ -28,7 +33,7 @@ export const Hero = () => {
                className="text-5xl md:text-7xl font-black leading-[1.1] mb-8 max-w-4xl tracking-tight"
             >
                <div>Dubian Sepulveda</div>
-               <span className="text-gradient">Ingeniero de Sistemas & Full Stack Developer</span>
+               <span className="text-gradient">{t.title}</span>
             </motion.h1>
 
             <motion.p
@@ -37,9 +42,7 @@ export const Hero = () => {
                transition={{ delay: 0.2 }}
                className="text-lg md:text-xl text-slate-400 max-w-2xl mb-12 leading-relaxed"
             >
-               Experto en el desarrollo de software escalable utilizando{" "}
-               <span className="text-slate-100 font-semibold">ASP.NET, React y TypeScript</span>.
-               Especialista en Clean Architecture (DDD) y patrones de diseño robustos.
+               {t.description}
             </motion.p>
 
             <motion.div
@@ -52,14 +55,14 @@ export const Hero = () => {
                   href="#projects"
                   className="inline-flex items-center justify-center min-w-[180px] bg-primary text-background-dark font-bold py-4 rounded-xl shadow-xl shadow-primary/20 hover:scale-105 transition-all"
                >
-                  Ver Proyectos
+                  {t.viewProjects}
                   <ArrowDown className="ml-2 size-5" />
                </a>
                <a
                   href="#contact"
                   className="inline-flex items-center justify-center min-w-[180px] bg-slate-800 text-white font-bold py-4 rounded-xl hover:bg-slate-700 transition-all"
                >
-                  Contactar
+                  {t.contact}
                </a>
             </motion.div>
          </div>
