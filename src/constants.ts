@@ -34,13 +34,13 @@ export interface Project {
 export const SKILLS: Record<string, Skill[]> = {
    es: [
       { title: "ASP.NET", subtitle: "ESPECIALISTA BACKEND", icon: Code2 },
-      { title: "SQL Server", subtitle: "BASES DE DATOS RELACIONALES", icon: Database },
+      { title: "SQL Server / Postgres", subtitle: "BASES DE DATOS RELACIONALES", icon: Database },
       { title: "React + TypeScript", subtitle: "EXPERTO FRONTEND", icon: Monitor },
       { title: "NodeJs", subtitle: "EXPERTO BACKEND", icon: Code },
    ],
    en: [
       { title: "ASP.NET", subtitle: "BACKEND SPECIALIST", icon: Code2 },
-      { title: "SQL Server", subtitle: "RELATIONAL DATABASES", icon: Database },
+      { title: "SQL Server / Postgres", subtitle: "RELATIONAL DATABASES", icon: Database },
       { title: "React + TypeScript", subtitle: "FRONTEND EXPERT", icon: Monitor },
       { title: "NodeJs", subtitle: "BACKEND EXPERT", icon: Code },
    ]
@@ -241,10 +241,6 @@ export const TRANSLATIONS = {
          title: "Trabajemos juntos para construir algo increíble.",
          button: "Contactar ahora",
          sendEmail: "Envíame un Email"
-      },
-      footer: {
-         rights: "Todos los derechos reservados.",
-         builtWith: "Construido con React 19 & Tailwind CSS 4"
       }
    },
    en: {
@@ -290,10 +286,6 @@ export const TRANSLATIONS = {
          title: "Let's work together to build something amazing.",
          button: "Contact now",
          sendEmail: "Send me an Email"
-      },
-      footer: {
-         rights: "All rights reserved.",
-         builtWith: "Built with React 19 & Tailwind CSS 4"
       }
    }
 }

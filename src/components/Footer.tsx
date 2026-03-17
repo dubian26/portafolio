@@ -14,7 +14,7 @@ export const Footer = () => {
                   <Terminal className="text-primary size-4" />
                </div>
                <p className="text-sm text-slate-500 font-medium">
-                  © {new Date().getFullYear()} Dubian Sepulveda. {t.rights}
+                  © {new Date().getFullYear()} Dubian Sepulveda. Built with Passion
                </p>
             </div>
 
