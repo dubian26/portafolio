@@ -1,10 +1,6 @@
 import { Github, Linkedin, Terminal } from "lucide-react"
-import { useLanguage } from "../context/LanguageContext"
-import { TRANSLATIONS } from "../constants"
 
 export const Footer = () => {
-   const { language } = useLanguage()
-   const t = TRANSLATIONS[language].footer
 
    return (
       <footer className="py-12 border-t border-slate-800">
