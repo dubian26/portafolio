@@ -53,16 +53,16 @@ export const EXPERIENCE: Record<string, Experience[]> = {
          role: "Líder técnico",
          company: "Sistemas y Computadores S.A.",
          description: "Lideré un equipo de desarrollo, implementando arquitecturas limpias y " +
-            "patrones de diseño robustos en ASP.NET Core. Optimizé bases de datos SQL Server para entornos " +
+            "patrones de diseño robustos en ASP.NET Core. Optimicé bases de datos SQL Server para entornos " +
             "de alta concurrencia y gestioné procesos de CI/CD con Azure DevOps. En el frontend, " +
             "trabajé con React y Typescript, implementando interfaces de usuario modernas y responsivas.",
       },
       {
          period: "2014 — 2018",
-         role: "Ingeniero desarrollador senior",
+         role: "Ingeniero desarrollador full stack",
          company: "Sistemas y Computadores S.A.",
-         description: "Desarrollé aplicaciones en C# .NET Framework, participó en la creación de " +
-            "herramientas transversales para la compañía, como: componente de cargue de archivos, componente de generación " +
+         description: "Desarrollé aplicaciones en C# .NET Framework, participé en la creación de " +
+            "herramientas transversales para la compañía tales como: componente de cargue de archivos, componente de generación " +
             "dinámica de formularios, oper-manager, radicación masiva por medio cargue y extracción de datos desde archivos Excel " +
             "y construí autómatas para procesamiento en lote y transferencia de datos.",
       },
@@ -223,7 +223,7 @@ export const TRANSLATIONS = {
          },
          patterns: {
             title: "Patrones de Diseño",
-            description: "Mi enfoque en el desarrollo de APIs va más allá del CRUD básico. Domino patrones avanzados como CQRS para optimizar el rendimiento y otros para resolver la consistencia en sistemas distribuidos. Utilizo Repository Pattern junto a Unit of Work para un acceso a datos estructurado, y priorizo siempre la legibilidad (Clean Code) mediante patrones creacionales, mediador, Early Return entre otros, permitiendo que la lógica de negocio sea el centro de la aplicación."
+            description: "Mi enfoque en el desarrollo de API va más allá del CRUD básico. Implemento patrones avanzados como CQRS para optimizar el rendimiento y otros para resolver la consistencia en sistemas distribuidos. Utilizo Repository Pattern junto a Unit of Work para un acceso a datos estructurado, priorizando siempre la legibilidad (Clean Code) mediante patrones creacionales, mediador, Early Return, entre otros, permitiendo que la lógica de negocio sea el centro de la aplicación."
          }
       },
       experience: {
